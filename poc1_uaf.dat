@@ -1,0 +1,1 @@
+cal assert_fails('c0',['','\1'])
