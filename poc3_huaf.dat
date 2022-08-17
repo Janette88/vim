@@ -1,0 +1,10 @@
+vim9s
+export fu C()
+endf
+def C0(l: list<string>)
+enddef
+try
+0
+0->(0
+->a.0(
+->u
