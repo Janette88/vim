@@ -1,0 +1,6 @@
+fu s:Tag0unc0(t,f,o)
+bw
+endf
+se tagfunc=s:Tag0unc0
+new
+cal assert_fails('ta0')
