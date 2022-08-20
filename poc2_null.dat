@@ -1,0 +1,29 @@
+func Test_spell_normal()
+  call append(0, ['1 good', '2 goood', '3 goood'])
+endfunc
+
+func Test_spellfile_format_error()
+  call mkdir('Xtest/spell', 'p')
+endfunc
+
+func Test_sugfile_format_error()
+  call mkdir('Xtest/spell', 'p')
+  call writefile(0z56494D7370656C320B00000000080000000000000044FF000000000000000000000000, splfile, 'b')
+
+endfunc
+
+func Test_wordlist_dic()
+  let lines =<< trim 
+    example
+    /encoding=latin1
+    example
+
+endfunc
+
+  call writefile([], 'Xtest.dic')
+  call writefile([], 'Xtest.aff')
+  call writefile(['COMPOUNDFLAG c', 'NOBREAK'], 'Xtest.aff')
+  let output = execute('mkspell! Xtest.spl Xtest')
+  call writefile(['SOFOFROM abcd', 'SOFOTO ABCD', 'SAL CIA X'], 'Xtest.aff')
+  let output = execute('mkspell! Xtest.spl Xtest')
+ 
