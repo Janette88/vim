@@ -1,0 +1,7 @@
+tabnew
+se mouse=a
+fu C00000xpr()
+retu"\<LeftMouse>"
+endf
+nn<expr>< C00000xpr()
+norm<
