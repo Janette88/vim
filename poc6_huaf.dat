@@ -1,0 +1,7 @@
+com-c -=0 Xn <mods><count>lne<bang><args>
+let s:bufnr=bufnr()
+cal setloclist(0,[{'0':0,'':''}])
+au BufEnter * cal setloclist(1,[{'':s:bufnr,'0':0,'t':''},{'bufnr':s:bufnr,'':0,'0':''}],'r')
+lop
+cal assert_fails('exe"norm0j\<CR>"')
+Xn
