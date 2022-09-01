@@ -1,0 +1,51 @@
+  mksession! Xtest_mks.out
+  let lines = readfile('Xtest_mks.out')
+  let term_cmd = ''
+ 111111111111111111111111 for line in lines
+    if line =~ '^terminal'
+      call assert_report('session must not restore terminal')
+    endif
+  endfor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
