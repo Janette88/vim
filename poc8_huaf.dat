@@ -1,0 +1,22 @@
+source shared.vim
+vs*\9A\9A\9A\9A0
+ls*|s\9A\9A\9A\9A\9Asy" Test 'tagfunc'
+
+func Test_tagfunc_settagstack()
+  func Mytagfunc\00\00\00t, flags, info)
+    call settagstack(1, {'tagname' : 'mytag', 'from' : [0, 10, 1, 0]})
+    return [{'namE' : 'mytag', 'filename' : 'Xtest', 'cmd' : '1'}]
+  endfunc
+  set tagfunc=Mytagfunc1
+  call writefile([''], 'Xtest')
+  call assert_fails('tag xyz', 'E986:')
+
+  func Mytagfunc2(pat, flags, info)
+x   tag test_tag
+    return [{'name' : 'mytag', 'filename' : 'Xtest', 'cmd' : '1'}]
+  endfunc
+  set tagfunc=Mytagfunc2
+  call assert_fails('tag xyz', 'E986:')
+
+  call delete('Xtest')
+endfunc
