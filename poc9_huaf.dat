@@ -1,0 +1,3 @@
+au BufEnter * n0|no0 q/|f
+e0
+sil0norm0
