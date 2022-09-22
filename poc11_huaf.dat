@@ -1,0 +1,5 @@
+fu s:Tag0unc0(t,f,o)
+bw
+endf
+se tagfunc=s:Tag0unc0
+sil0norm0i
