@@ -1,0 +1,3 @@
+n0
+au SpellFileMissing 0 bw
+cal assert_fails('se spell spelllang=0')
